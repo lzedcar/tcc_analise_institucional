@@ -1,5 +1,5 @@
 
-# TCC — Padrões de desempenho revelam desigualdade estrutural entre órgãos judiciais do TJSP
+# Padrões de desempenho revelam desigualdade estrutural entre órgãos judiciais do TJSP
 Aplicação de ciência de dados para identificação de gargalos e perfis institucionais no Judiciário
 
 ## Descrição
