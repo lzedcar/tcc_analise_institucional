@@ -1,13 +1,13 @@
 
-# Padrões de desempenho revelam desigualdade estrutural entre órgãos judiciais do TJSP
-Aplicação de ciência de dados para identificação de gargalos e perfis institucionais no Judiciário
+# Análise Institucional do TJSP com Ciência de Dados
+Padrões de desempenho revelam desigualdade estrutural entre órgãos judiciais
 
 ## Descrição
 
 Este repositório contém os códigos, dados e resultados desenvolvidos no Trabalho de Conclusão do Curso MBA em Ciência e Análise de Dados - USP/Esalq.
 O projeto utiliza dados públicos disponibilizados pela Corregedoria-Geral da Justiça do Tribunal de Justiça de São Paulo (TJSP), contendo indicadores institucionais agregados por órgão judicial.
 Os dados representam o desempenho acumulado entre **maio de 2023 e abril de 2024**, com base em relatórios consolidados disponíveis até abril de 2024.
-A proposta é identificar padrões de desempenho, gargalos operacionais e desigualdades estruturais entre os órgãos judiciais do TJSP, por meio de técnicas de análise exploratória, agrupamento (clustering) e modelagem como instrumento auxiliar.
+O objetivo do projeto é identificar padrões de desempenho, gargalos operacionais e desigualdades estruturais entre órgãos judiciais do TJSP, por meio de técnicas de análise exploratória, agrupamento (clustering) e modelagem como recurso complementar para teste de hipóteses.
 
 ## Estrutura do repositório
 
