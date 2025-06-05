@@ -83,7 +83,7 @@ tcc_analise_institucional/
 - A modelagem preditiva foi empregada como instrumento auxiliar e apresentou explicabilidade limitada, não sendo adequada para prognósticos individuais.
 - Não foi possível realizar inferências causais, apenas associações exploratórias com base nos padrões observados.
   
-## 📚 Referências
+## Referências
 
 Conselho Nacional de Justiça [CNJ]. Justiça em Números – Painel de Estatísticas. Brasília, DF, Brasil. Disponível em: <https://justica-em-numeros.cnj.jus.br/painel-estatisticas/>. Acesso em: 03 de junho de 2025.
 Cunha, M. A.; Miranda, R. M. 2013. O uso de tecnologias de informação no Judiciário brasileiro: oportunidades e desafios. Revista de Administração Pública, 47(6): 1473–1493. <https://doi.org/10.1590/S0034-76122013000600006>
