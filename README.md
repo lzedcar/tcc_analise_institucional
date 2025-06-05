@@ -28,13 +28,14 @@ tcc_analise_institucional/
 │   └── 08_outliers_iad.py
 │
 ├── graficos/            # Visualizações geradas
-│   └── elbow_plot.png
-│   └── clusters_municipio.png
-│   └── distribuicao_clusters_grau.png
-│   └── modelo_dispersao_iad.png
-│   └── importancia_variaveis_modelo.png
-│   └── heatmap_correlacoes.png
-│   └── outliers_iad.png
+│   └── clusters_pca.png
+│   └── clusters_por_grau.png
+│   └── clusters_por_municipio.png
+│   └── correlacao_indicadores.png
+│   └── cotovelo_kmeans.png
+│   └── distribuicao_iad.png
+│   └── medias_por_cluster.png
+│   └── modelo_preditivo_iad.png
 
 ## Tecnologias utilizadas
 
