@@ -1,12 +1,12 @@
 
-# Análise Institucional do TJSP com Ciência de Dados
-Padrões de desempenho revelam desigualdade estrutural entre órgãos judiciais
+# Padrões de desempenho revelam desigualdade estrutural entre órgãos judiciais
+Diagnóstico de Desempenho Institucional no TJSP com Ciência de Dados
 
 ## Descrição
 
 Este repositório contém os códigos, dados e resultados desenvolvidos no Trabalho de Conclusão do Curso MBA em Ciência e Análise de Dados - USP/Esalq.
 O projeto utiliza dados públicos disponibilizados pela Corregedoria-Geral da Justiça do Tribunal de Justiça de São Paulo (TJSP), contendo indicadores institucionais agregados por órgão judicial.
-Os dados representam o desempenho acumulado entre **maio de 2023 e abril de 2024**, com base em relatórios consolidados disponíveis até abril de 2024.
+Os dados representam o desempenho acumulado entre maio de 2023 e abril de 2024, conforme informações extraídas do painel Justiça em Números do CNJ, disponibilizadas pela Corregedoria-Geral da Justiça do TJSP.
 O objetivo do projeto é identificar padrões de desempenho, gargalos operacionais e desigualdades estruturais entre órgãos judiciais do TJSP, por meio de técnicas de análise exploratória, agrupamento (clustering) e modelagem como recurso complementar para teste de hipóteses.
 
 ## Estrutura do repositório
@@ -18,13 +18,14 @@ tcc_analise_institucional/
 │   └── TJSP_com_clusters.csv
 │
 ├── scripts/             # Scripts Python com numeração sequencial
+│   └── 00_etapas_limpeza_manual.py
 │   └── 01_carregar_limpar_dados.py
 │   └── 02_analise_exploratoria.py
-│   └── 03_clustering_kmeans.py
-│   └── 04_mapeamento_geografico.py
-│   └── 05_modelo_preditivo.py
-│   └── 06_distribuicao_clusters_grau.py
-│   └── 07_salvar_base_final.py
+│   └── 03_clustering.py
+│   └── 04_mapeamento_clusters.py
+│   └── 05_cluster_por_grau.py
+│   └── 06_exportar_com_clusters.py
+│   └── 07_modelo_preditivo.py
 │   └── 08_outliers_iad.py
 │
 ├── graficos/            # Visualizações geradas
@@ -71,7 +72,7 @@ tcc_analise_institucional/
 - Órgãos com baixos valores de IAD revelam potenciais gargalos operacionais
 - Órgãos com valores de IAD excepcionalmente altos representam possíveis boas práticas ou exceções sistêmicas
 - A distribuição dos clusters apresenta forte relação com a classificação por grau (G1, G2, JE, TR)
-- A regressão linear sugeriu fraca capacidade preditiva do IAD com base nos indicadores disponíveis
+- A regressão linear indicou que os indicadores operacionais disponíveis explicam apenas uma fração do desempenho (R² ≈ 0,11), sugerindo influência de fatores estruturais e qualitativos não incluídos na base
 - Visualizações revelaram variabilidade significativa entre unidades judiciais em produtividade e carga de trabalho
 - A análise não supervisionada permitiu organizar os órgãos por similaridade de funcionamento, revelando padrões institucionais
 - As comparações entre grupos mostraram que estrutura e carga impactam diretamente o desempenho judicial
@@ -79,6 +80,7 @@ tcc_analise_institucional/
 ## Limitações
 
 - A base utilizada reflete apenas dados agregados e quantitativos, sem variáveis institucionais detalhadas (como número de magistrados, recursos disponíveis ou tempo médio por processo).
+- Além disso, o conjunto inclui diferentes tipos de unidades (varas, CEJUSCs, juizados, etc.), mas sem uma variável explícita de tipo funcional, o que limita a comparabilidade entre os registros.
 - Os dados abrangem um período limitado (maio/2023 a abril/2024), o que restringe a análise a uma janela temporal específica.
 - O agrupamento foi realizado com base exclusivamente em variáveis numéricas, sem considerar aspectos qualitativos relevantes da atuação institucional.
 - A modelagem preditiva foi empregada como instrumento auxiliar e apresentou explicabilidade limitada, não sendo adequada para prognósticos individuais.
