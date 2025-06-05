@@ -75,3 +75,23 @@ plt.show()
 # ----------------------------------------
 print("\nPerfil médio por cluster:")
 print(df_cluster.groupby('cluster').mean())
+
+# ----------------------------------------
+# Etapa 5 – Gráfico: Comparativo das médias por cluster
+# ----------------------------------------
+# Agrupar as médias
+medias = df_cluster.groupby('cluster').mean()
+
+# Selecionar algumas variáveis mais interpretáveis
+variaveis_plot = ['cp_apr_2025', 'sus_apr_2025', 'tpsent_12_meses', 'conc100_apr_2025', 'iad_12_meses']
+medias_plot = medias[variaveis_plot]
+
+# Plotar gráfico de barras
+plt.figure(figsize=(12, 6))
+medias_plot.T.plot(kind='bar')
+plt.title("Médias de Indicadores Operacionais por Cluster")
+plt.ylabel("Valor Médio")
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.savefig(os.path.join("..", "graficos", "medias_por_cluster.png"))
+plt.show()
