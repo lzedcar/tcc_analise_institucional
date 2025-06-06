@@ -13,8 +13,10 @@ O objetivo do projeto é identificar padrões de desempenho, gargalos operaciona
 ```
 tcc_analise_institucional/
 ├── dados/               # Bases originais e tratadas
-│   ├── TJSP_tbl_correg.csv
-│   └── TJSP_com_clusters.csv
+│   ├── TJSP_com_clusters.csv
+│   └── TJSP_limpo.csv
+│   └── TJSP_limpo_etapas.csv
+│   └── TJSP_tbl_correg.csv
 ├── scripts/             # Scripts Python com numeração sequencial
 │   ├── 00_etapas_limpeza_manual.py
 │   ├── 01_carregar_limpar_dados.py
