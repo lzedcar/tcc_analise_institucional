@@ -1,6 +1,5 @@
-
-# Padrões de desempenho revelam desigualdade estrutural entre órgãos judiciais
-Diagnóstico de Desempenho Institucional no TJSP com Ciência de Dados
+# Diagnóstico de Desempenho Institucional no TJSP com Ciência de Dados
+Análise de padrões, gargalos e perfis operacionais com técnicas de agrupamento
 
 ## Descrição
 
@@ -60,7 +59,7 @@ tcc_analise_institucional/
 - Análise de correlação entre variáveis institucionais
 - Aplicação de agrupamento não supervisionado (K-Means) para identificação de perfis institucionais
 - Avaliação da quantidade ideal de clusters (Elbow Method)
-- Georreferenciamento por município com base em agrupamentos (mapa de clusters)
+- Visualização da distribuição de clusters por município (gráfico de barras)
 - Regressão linear auxiliar para avaliar relações entre indicadores e o IAD
 - Identificação de outliers extremos com base no Índice de Atendimento à Demanda (IAD)
 - Exportação da base enriquecida com clusters para reuso ou reprodução
@@ -69,6 +68,7 @@ tcc_analise_institucional/
 
 - Evidência de desigualdade estrutural entre órgãos com desempenhos extremos no TJSP
 - Identificação de três perfis institucionais distintos por meio de agrupamento (K-Means)
+- Os três clusters foram rotulados como: Alta Carga/Baixo Desempenho, Perfil Intermediário/Instável e Alta Eficiência/Alta Produtividade, com base nas médias de IAD, produtividade e carga processual.
 - Órgãos com baixos valores de IAD revelam potenciais gargalos operacionais
 - Órgãos com valores de IAD excepcionalmente altos representam possíveis boas práticas ou exceções sistêmicas
 - A distribuição dos clusters apresenta forte relação com a classificação por grau (G1, G2, JE, TR)
@@ -81,6 +81,7 @@ tcc_analise_institucional/
 
 - A base utilizada reflete apenas dados agregados e quantitativos, sem variáveis institucionais detalhadas (como número de magistrados, recursos disponíveis ou tempo médio por processo).
 - Além disso, o conjunto inclui diferentes tipos de unidades (varas, CEJUSCs, juizados, etc.), mas sem uma variável explícita de tipo funcional, o que limita a comparabilidade entre os registros.
+- A base não contém variáveis geográficas explícitas (como coordenadas), o que limita representações espaciais mais precisas dos dados.
 - Os dados abrangem um período limitado (maio/2023 a abril/2024), o que restringe a análise a uma janela temporal específica.
 - O agrupamento foi realizado com base exclusivamente em variáveis numéricas, sem considerar aspectos qualitativos relevantes da atuação institucional.
 - A modelagem preditiva foi empregada como instrumento auxiliar e apresentou explicabilidade limitada, não sendo adequada para prognósticos individuais.
@@ -89,16 +90,16 @@ tcc_analise_institucional/
 ## Referências
 
 Conselho Nacional de Justiça [CNJ]. Justiça em Números – Painel de Estatísticas. Brasília, DF, Brasil. Disponível em: <https://justica-em-numeros.cnj.jus.br/painel-estatisticas/>. Acesso em: 03 de junho de 2025.
-Cunha, M. A.; Miranda, R. M. 2013. O uso de tecnologias de informação no Judiciário brasileiro: oportunidades e desafios. Revista de Administração Pública, 47(6): 1473–1493. <https://doi.org/10.1590/S0034-76122013000600006>
+Da Ros, Luciano. 2015. O custo da Justiça no Brasil: uma análise comparativa exploratória. Newsletter. Observatório de elites políticas e sociais do Brasil. NUSP/UFPR, v.2, n. 9, julho. p. 1-15. ISSN 2359-2826. < http://observatory-elites.org/wp-content/uploads/2012/06/newsletter-Observatorio-v.-2-n.-9.pdf>
 Domingos, P. 2015. The Master Algorithm: How the Quest for the Ultimate Learning Machine Will Remake Our World. New York, NY, USA: Basic Books.
 Favero, L. P.; Belfiore, P. 2017. Manual de Análise de Dados: Estatística e Modelagem Multivariada com Excel, SPSS e Stata. São Paulo, SP, Brasil: Elsevier. 660 p.
 Hastie, T.; Tibshirani, R.; Friedman, J. 2009. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2. ed. New York, NY, USA: Springer. 745 p.
-Pedregosa, F. et al. 2011. Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12: 2825–2830.
-Pereira, A. 2021. Introdução à Ciência de Dados: Algoritmos de Classificação e Regressão com Python. São Paulo, SP, Brasil: Novatec. 288 p.
+Pedregosa, F. et al. 2011. Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12: 2825–2830.< http://jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf>
 Porto, A. C. 2019. O impacto da transformação digital no judiciário brasileiro: uma análise da adoção de tecnologias no sistema judicial. Revista Eletrônica do TRT da 9ª Região, 9(96): 1–17.
 Ribeiro, M. V. M. (2024). A importância da inteligência artificial no poder judiciário brasileiro. REVISTA DELOS, 17(61), e2804. <https://doi.org/10.55905/rdelosv17.n61-142>. Acessado em: 15 de março de 2025.
 Russell, S.; Norvig, P. 2021. Artificial Intelligence: A Modern Approach. 4. ed. Upper Saddle River, NJ, USA: Pearson.
+Silva, G. C.; Macedo, T. S. 2020. Aplicações de ciência de dados no setor público: um estudo de caso no Poder Judiciário. Revista de Administração Pública e Gestão Social, 12(3): 229–245. <https://doi.org/10.21118/apgs.v12i3.8204>
 
 ## Autor(a)
 
-Este repositório foi desenvolvido por [Luciana Zedan de Carvalho] como parte do Trabalho de Conclusão do Curso MBA em Ciência e Análise de Dados — USP/Esalq 2025.
+Este repositório foi desenvolvido por Luciana Zedan de Carvalho como parte do Trabalho de Conclusão do Curso MBA em Ciência e Análise de Dados — USP/Esalq 2025.
