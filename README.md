@@ -10,32 +10,7 @@ O objetivo do projeto é identificar padrões de desempenho, gargalos operaciona
 
 ## Estrutura do repositório
 
-tcc_analise_institucional/
-│
-├── dados/               # Bases originais e tratadas
-│   └── TJSP_tbl_correg.csv
-│   └── TJSP_com_clusters.csv
-│
-├── scripts/             # Scripts Python com numeração sequencial
-│   └── 00_etapas_limpeza_manual.py
-│   └── 01_carregar_limpar_dados.py
-│   └── 02_analise_exploratoria.py
-│   └── 03_clustering.py
-│   └── 04_mapeamento_clusters.py
-│   └── 05_cluster_por_grau.py
-│   └── 06_exportar_com_clusters.py
-│   └── 07_modelo_preditivo.py
-│   └── 08_outliers_iad.py
-│
-├── graficos/            # Visualizações geradas
-│   └── clusters_pca.png
-│   └── clusters_por_grau.png
-│   └── clusters_por_municipio.png
-│   └── correlacao_indicadores.png
-│   └── cotovelo_kmeans.png
-│   └── distribuicao_iad.png
-│   └── medias_por_cluster.png
-│   └── modelo_preditivo_iad.png
+<pre> ```bash tcc_analise_institucional/ ├── dados/ # Bases originais e tratadas │ ├── TJSP_tbl_correg.csv │ └── TJSP_com_clusters.csv ├── scripts/ # Scripts Python com numeração sequencial │ ├── 00_etapas_limpeza_manual.py │ ├── 01_carregar_limpar_dados.py │ ├── 02_analise_exploratoria.py │ ├── 03_clustering.py │ ├── 04_mapeamento_clusters.py │ ├── 05_cluster_por_grau.py │ ├── 06_exportar_com_clusters.py │ ├── 07_modelo_preditivo.py │ └── 08_outliers_iad.py ├── graficos/ # Visualizações geradas │ ├── clusters_pca.png │ ├── clusters_por_grau.png │ ├── clusters_por_municipio.png │ ├── correlacao_indicadores.png │ ├── cotovelo_kmeans.png │ ├── distribuicao_iad.png │ ├── medias_por_cluster.png │ └── modelo_preditivo_iad.png ``` </pre>
 
 ## Tecnologias utilizadas
 
