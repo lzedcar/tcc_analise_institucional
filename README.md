@@ -9,39 +9,39 @@ O objetivo da pesquisa foi aplicar técnicas de ciência de dados para investiga
 
 ## Estrutura do repositório
 
-tcc_analise_institucional/
-├── dados/
-│ ├── outliers_regressao_multipla.csv
-│ ├── outliers_simples.csv
-│ ├── TJSP_com_clusters.csv
-│ └── TJSP_limpo.csv
-│ └── TJSP_limpo_etapas.csv
-│ └── TJSP_tbl_correg.csv
-├── scripts/
-│ ├── 00_etapas_limpeza_manual.py
-│ ├── 01_carregar_limpar_dados.py
-│ ├── 02_analise_exploratoria.py
-│ ├── 02b_correlacao_variaveis.py
-│ ├── 03_clustering.py
-│ ├── 04_mapeamento_clusters.py
-│ ├── 05_cluster_por_grau.py
-│ ├── 06_exportar_com_clusters.py
-│ └── 07_modelo_preditivo.py
-│ └── 07a_regressao_linear_simples.py
-│ └── 08_outliers_multipla.py
-│ └── 08a_outliers_simples.py
-├── graficos/
-│ ├── clusters_pca.png
-│ ├── cotovelo.png
-│ ├── distribuicao_clusters_municipio.png
-│ ├── distribuição_iad.png
-│ ├── matriz_correlacao_indicadores.png
-│ ├── matriz_correlacao_operacionais.png
-│ ├── medias_indicadores.png
-│ ├── outliers_regressao_multipla.png
-│ ├── outliers_regressao_simples.png
-│ ├── regressao_multipla.png
-│ └── regressao_simples.png
+tcc_analise_institucional/  
+- dados/
+  - outliers_regressao_multipla.csv  
+  - outliers_simples.csv  
+  - TJSP_com_clusters.csv  
+  - TJSP_limpo.csv  
+  - TJSP_limpo_etapas.csv  
+  - TJSP_tbl_correg.csv  
+- scripts/
+  - 00_etapas_limpeza_manual.py  
+  - 01_carregar_limpar_dados.py  
+  - 02_analise_exploratoria.py  
+  - 02b_correlacao_variaveis.py  
+  - 03_clustering.py  
+  - 04_mapeamento_clusters.py  
+  - 05_cluster_por_grau.py  
+  - 06_exportar_com_clusters.py  
+  - 07_modelo_preditivo.py  
+  - 07a_regressao_linear_simples.py  
+  - 08_outliers_multipla.py  
+  - 08a_outliers_simples.py  
+- graficos/
+  - clusters_pca.png  
+  - cotovelo.png  
+  - distribuicao_clusters_municipio.png  
+  - distribuição_iad.png  
+  - matriz_correlacao_indicadores.png  
+  - matriz_correlacao_operacionais.png  
+  - medias_indicadores.png  
+  - outliers_regressao_multipla.png  
+  - outliers_regressao_simples.png  
+  - regressao_multipla.png  
+  - regressao_simples.png 
 
 ## Tecnologias utilizadas
 
