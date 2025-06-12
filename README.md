@@ -1,107 +1,104 @@
-# Diagnóstico de Desempenho Institucional no TJSP com Ciência de Dados
-Análise de padrões, gargalos e perfis operacionais com técnicas de agrupamento
+# Diagnóstico de Desempenho Institucional no TJSP com Ciência de Dados  
+Análise de padrões operacionais, desigualdade estrutural e gargalos a partir de dados públicos
 
 ## Descrição
 
-Este repositório contém os códigos, dados e resultados desenvolvidos no Trabalho de Conclusão do Curso MBA em Ciência e Análise de Dados - USP/Esalq.
-O projeto utiliza dados públicos disponibilizados pela Corregedoria-Geral da Justiça do Tribunal de Justiça de São Paulo (TJSP), contendo indicadores institucionais agregados por órgão judicial.
-Os dados representam o desempenho acumulado entre maio de 2023 e abril de 2024, conforme informações extraídas do painel Justiça em Números do CNJ, disponibilizadas pela Corregedoria-Geral da Justiça do TJSP.
-O objetivo do projeto é identificar padrões de desempenho, gargalos operacionais e desigualdades estruturais entre órgãos judiciais do TJSP, por meio de técnicas de análise exploratória, agrupamento (clustering) e modelagem como recurso complementar para teste de hipóteses.
+Este repositório reúne os scripts, dados e visualizações desenvolvidos para o Trabalho de Conclusão de Curso MBA em Ciência e Análise de Dados – USP/Esalq (2025).
+
+O objetivo da pesquisa foi aplicar técnicas de ciência de dados para investigar o desempenho institucional das unidades judiciais do Tribunal de Justiça de São Paulo (TJSP), com base em dados operacionais agregados e públicos, referentes ao período de maio de 2023 a abril de 2024, disponibilizados pelo Conselho Nacional de Justiça (CNJ). Foram identificados padrões de funcionamento, perfis institucionais recorrentes e unidades com desempenho atípico, contribuindo para o diagnóstico exploratório da heterogeneidade institucional no TJSP.
 
 ## Estrutura do repositório
 
-```
 tcc_analise_institucional/
-├── dados/               # Bases originais e tratadas
-│   ├── TJSP_com_clusters.csv
-│   └── TJSP_limpo.csv
-│   └── TJSP_limpo_etapas.csv
-│   └── TJSP_tbl_correg.csv
-├── scripts/             # Scripts Python com numeração sequencial
-│   ├── 00_etapas_limpeza_manual.py
-│   ├── 01_carregar_limpar_dados.py
-│   ├── 02_analise_exploratoria.py
-│   ├── 03_clustering.py
-│   ├── 04_mapeamento_clusters.py
-│   ├── 05_cluster_por_grau.py
-│   ├── 06_exportar_com_clusters.py
-│   ├── 07_modelo_preditivo.py
-│   └── 08_outliers_iad.py
-├── graficos/            # Visualizações geradas
-│   ├── clusters_pca.png
-│   ├── clusters_por_grau.png
-│   ├── clusters_por_municipio.png
-│   ├── correlacao_indicadores.png
-│   ├── cotovelo_kmeans.png
-│   ├── distribuicao_iad.png
-│   ├── medias_por_cluster.png
-│   └── modelo_preditivo_iad.png
-```
+├── dados/
+│ ├── outliers_regressao_multipla.csv
+│ ├── outliers_simples.csv
+│ ├── TJSP_com_clusters.csv
+│ └── TJSP_limpo.csv
+│ └── TJSP_limpo_etapas.csv
+│ └── TJSP_tbl_correg.csv
+├── scripts/
+│ ├── 00_etapas_limpeza_manual.py
+│ ├── 01_carregar_limpar_dados.py
+│ ├── 02_analise_exploratoria.py
+│ ├── 02b_correlacao_variaveis.py
+│ ├── 03_clustering.py
+│ ├── 04_mapeamento_clusters.py
+│ ├── 05_cluster_por_grau.py
+│ ├── 06_exportar_com_clusters.py
+│ └── 07_modelo_preditivo.py
+│ └── 07a_regressao_linear_simples.py
+│ └── 08_outliers_multipla.py
+│ └── 08a_outliers_simples.py
+├── graficos/
+│ ├── correlacao_indicadores.png
+│ ├── correlacao_reduzida.png
+│ ├── cotovelo_kmeans.png
+│ ├── clusters_pca.png
+│ ├── clusters_por_municipio.png
+│ ├── medias_por_cluster.png
+│ ├── clusters_por_grau.png
+│ ├── regressao_simples.png
+│ ├── regressao_multipla_previsto.png
+│ ├── outliers_simples.png
+│ └── outliers_multipla.png
+
+markdown
+Copiar
+Editar
 
 ## Tecnologias utilizadas
 
-- Python 3.12+
-- Spyder 5.5.1 (IDE utilizada para desenvolvimento)
-- Pandas — manipulação de dados
-- NumPy — operações numéricas
-- Matplotlib — visualizações gráficas
-- Seaborn — visualizações estatísticas
-- Scikit-learn — clustering, regressão e normalização
-- os — manipulação de caminhos
-- warnings — controle de alertas
+- Python 3.12  
+- Spyder 5.5.1  
+- Pandas — manipulação de dados  
+- NumPy — operações numéricas  
+- Matplotlib e Seaborn — visualizações  
+- Scikit-learn — clustering, regressão e padronização  
+- OS e Pathlib — estruturação de scripts e diretórios  
 
 ## Metodologia aplicada
 
-- Importação e padronização de base de dados bruta (.csv)
-- Renomeação e tratamento de colunas com símbolos e formatos inconsistentes (%, vírgulas, nulos)
-- Detecção e tratamento de valores ausentes
-- Análise estatística descritiva (distribuições, medidas de tendência, dispersão)
-- Visualização gráfica de distribuições e correlações
-- Análise de correlação entre variáveis institucionais
-- Aplicação de agrupamento não supervisionado (K-Means) para identificação de perfis institucionais
-- Avaliação da quantidade ideal de clusters (Elbow Method)
-- Visualização da distribuição de clusters por município (gráfico de barras)
-- Regressão linear auxiliar para avaliar relações entre indicadores e o IAD
-- Identificação de outliers extremos com base no Índice de Atendimento à Demanda (IAD)
-- Exportação da base enriquecida com clusters para reuso ou reprodução
+- Padronização e limpeza da base de dados (.csv)  
+- Análise exploratória descritiva  
+- Avaliação de correlação entre variáveis e o Índice de Atendimento à Demanda (IAD)  
+- Agrupamento de unidades com K-Means (K=3)  
+- Análise de distribuição dos clusters por município e grau  
+- Regressão linear (simples e múltipla) como recurso exploratório  
+- Identificação de outliers a partir dos resíduos dos modelos  
+- Exportação da base final com clusterização aplicada  
 
 ## Principais descobertas
 
-- Evidência de desigualdade estrutural entre órgãos com desempenhos extremos no TJSP
-- Identificação de três perfis institucionais distintos por meio de agrupamento (K-Means)
-- Os três clusters foram rotulados como: Alta Carga/Baixo Desempenho, Perfil Intermediário/Instável e Alta Eficiência/Alta Produtividade, com base nas médias de IAD, produtividade e carga processual.
-- Órgãos com baixos valores de IAD revelam potenciais gargalos operacionais
-- Órgãos com valores de IAD excepcionalmente altos representam possíveis boas práticas ou exceções sistêmicas
-- A distribuição dos clusters apresenta forte relação com a classificação por grau (G1, G2, JE, TR)
-- A regressão linear indicou que os indicadores operacionais disponíveis explicam apenas uma fração do desempenho (R² ≈ 0,11), sugerindo influência de fatores estruturais e qualitativos não incluídos na base
-- Visualizações revelaram variabilidade significativa entre unidades judiciais em produtividade e carga de trabalho
-- A análise não supervisionada permitiu organizar os órgãos por similaridade de funcionamento, revelando padrões institucionais
-- As comparações entre grupos mostraram que estrutura e carga impactam diretamente o desempenho judicial
+- Três perfis operacionais distintos identificados (baixo desempenho, intermediário e alto desempenho)  
+- Unidades do primeiro grau concentram os piores desempenhos institucionais  
+- A modelagem preditiva apresentou explicabilidade muito baixa (R² ≈ 0,0002 a -0,17)  
+- A análise de outliers destacou unidades com desempenho atípico, que podem indicar gargalos ou boas práticas  
+- O grau de jurisdição mostrou associação com o desempenho médio dos clusters  
+- A análise quantitativa agregada é útil, mas limitada para explicar variações de desempenho institucional  
 
 ## Limitações
 
-- A base utilizada reflete apenas dados agregados e quantitativos, sem variáveis institucionais detalhadas (como número de magistrados, recursos disponíveis ou tempo médio por processo).
-- Além disso, o conjunto inclui diferentes tipos de unidades (varas, CEJUSCs, juizados, etc.), mas sem uma variável explícita de tipo funcional, o que limita a comparabilidade entre os registros.
-- A base não contém variáveis geográficas explícitas (como coordenadas), o que limita representações espaciais mais precisas dos dados.
-- Os dados abrangem um período limitado (maio/2023 a abril/2024), o que restringe a análise a uma janela temporal específica.
-- O agrupamento foi realizado com base exclusivamente em variáveis numéricas, sem considerar aspectos qualitativos relevantes da atuação institucional.
-- A modelagem preditiva foi empregada como instrumento auxiliar e apresentou explicabilidade limitada, não sendo adequada para prognósticos individuais.
-- Não foi possível realizar inferências causais, apenas associações exploratórias com base nos padrões observados.
-  
+- Base exclusivamente agregada e quantitativa, sem variáveis qualitativas ou contextuais  
+- Ausência de classificação confiável por tipo de vara impossibilitou estratificação por especialização  
+- Regressões tiveram uso exclusivamente exploratório, sem finalidade preditiva  
+- Comparações entre tipos de órgãos foram feitas com cautela metodológica devido à heterogeneidade funcional  
+
 ## Referências
 
-Conselho Nacional de Justiça [CNJ]. Justiça em Números – Painel de Estatísticas. Brasília, DF, Brasil. Disponível em: <https://justica-em-numeros.cnj.jus.br/painel-estatisticas/>. Acesso em: 03 de junho de 2025.
-Cunha, M. A.; Miranda, R. M. (2013). O uso de tecnologias de informação no Judiciário brasileiro: oportunidades e desafios. *Revista de Administração Pública*, 47(6): 1473–1493. <https://doi.org/10.1590/S0034-76122013000600006>
-Da Ros, Luciano. 2015. O custo da Justiça no Brasil: uma análise comparativa exploratória. Newsletter. Observatório de elites políticas e sociais do Brasil. NUSP/UFPR, v.2, n. 9, julho. p. 1-15. ISSN 2359-2826. < http://observatory-elites.org/wp-content/uploads/2012/06/newsletter-Observatorio-v.-2-n.-9.pdf>
-Domingos, P. 2015. The Master Algorithm: How the Quest for the Ultimate Learning Machine Will Remake Our World. New York, NY, USA: Basic Books.
-Favero, L. P.; Belfiore, P. 2017. Manual de Análise de Dados: Estatística e Modelagem Multivariada com Excel, SPSS e Stata. São Paulo, SP, Brasil: Elsevier. 660 p.
-Hastie, T.; Tibshirani, R.; Friedman, J. 2009. The Elements of Statistical Learning: Data Mining, Inference, and Prediction. 2. ed. New York, NY, USA: Springer. 745 p.
-Pedregosa, F. et al. 2011. Scikit-learn: Machine learning in Python. Journal of Machine Learning Research, 12: 2825–2830.< http://jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf>
-Porto, A. C. 2019. O impacto da transformação digital no judiciário brasileiro: uma análise da adoção de tecnologias no sistema judicial. Revista Eletrônica do TRT da 9ª Região, 9(96): 1–17.
-Ribeiro, M. V. M. (2024). A importância da inteligência artificial no poder judiciário brasileiro. REVISTA DELOS, 17(61), e2804. <https://doi.org/10.55905/rdelosv17.n61-142>. Acessado em: 15 de março de 2025.
-Russell, S.; Norvig, P. 2021. Artificial Intelligence: A Modern Approach. 4. ed. Upper Saddle River, NJ, USA: Pearson.
-Silva, G. C.; Macedo, T. S. 2020. Aplicações de ciência de dados no setor público: um estudo de caso no Poder Judiciário. Revista de Administração Pública e Gestão Social, 12(3): 229–245. <https://doi.org/10.21118/apgs.v12i3.8204>
+- Conselho Nacional de Justiça [CNJ]. Justiça em Números – Painel de Estatísticas. <https://justica-em-numeros.cnj.jus.br/painel-estatisticas/>  
+- Cunha, M. A.; Miranda, R. M. (2013). *Revista de Administração Pública*, 47(6): 1473–1493. <https://doi.org/10.1590/S0034-76122013000600006>  
+- Da Ros, L. (2015). *Newsletter Observatório de Elites*, v.2, n.9. <http://observatory-elites.org/wp-content/uploads/2012/06/newsletter-Observatorio-v.-2-n.-9.pdf>  
+- Domingos, P. (2015). *The Master Algorithm*. Basic Books.  
+- Favero, L. P.; Belfiore, P. (2017). *Manual de Análise de Dados*. Elsevier.  
+- Hastie, T.; Tibshirani, R.; Friedman, J. (2009). *The Elements of Statistical Learning*. Springer.  
+- Pedregosa, F. et al. (2011). *Journal of Machine Learning Research*, 12: 2825–2830. <http://jmlr.org/papers/volume12/pedregosa11a/pedregosa11a.pdf>  
+- Porto, A. C. (2019). *Revista Eletrônica do TRT da 9ª Região*, 9(96): 1–17.  
+- Ribeiro, M. V. M. (2024). *REVISTA DELOS*, 17(61), e2804. <https://doi.org/10.55905/rdelosv17.n61-142>  
+- Russell, S.; Norvig, P. (2021). *Artificial Intelligence: A Modern Approach*. Pearson.  
+- Silva, G. C.; Macedo, T. S. (2020). *Revista de Administração Pública e Gestão Social*, 12(3): 229–245. <https://doi.org/10.21118/apgs.v12i3.8204>  
+- Tribunal de Justiça do Estado de São Paulo. <https://www.tjsp.jus.br/PoderJudiciario/PoderJudiciario/OrgaosDaJustica>  
 
-## Autor(a)
+## Autoria
 
-Este repositório foi desenvolvido por Luciana Zedan de Carvalho como parte do Trabalho de Conclusão do Curso MBA em Ciência e Análise de Dados — USP/Esalq 2025.
+Este repositório foi desenvolvido por **Luciana Zedan de Carvalho** como parte do Trabalho de Conclusão do Cur
