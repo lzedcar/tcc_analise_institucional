@@ -1,4 +1,4 @@
-# Diagnóstico de Desempenho Institucional no TJSP com Ciência de Dados  
+# Perfis operacionais e disparidades de desempenho entre unidades judiciárias do Tribunal de Justiça de São Paulo 
 Análise de padrões operacionais, desigualdade estrutural e gargalos a partir de dados públicos
 
 ## Descrição
