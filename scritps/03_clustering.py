@@ -19,7 +19,7 @@ df = pd.read_csv(os.path.join("..", "dados", "TJSP_limpo_etapas.csv"))
 variaveis = [
     'tpsent_12_meses',    # Tempo médio de sentença
     'tpcpl_apr_2025',     # Tempo médio de cumprimento
-    'conc100_apr_2025'    # Taxa de conclusão
+    'conc100_apr_2025'    # Conciliação
 ]
 
 df_cluster = df[variaveis].dropna()  # Remover linhas com valores ausentes
@@ -90,4 +90,5 @@ plt.ylabel("Valor Médio")
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.savefig(os.path.join("..", "graficos", "medias_por_cluster.png"))
+
 plt.show()
